@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import LiveChat from "@/components/LiveChat";
 
 export const metadata: Metadata = {
-  title: "Olson Turbine Technologies",
+  title: "Next Generation Power",
   description: "Powering a Greener Tomorrow",
 };
 
