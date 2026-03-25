@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { companyConfig } from "@/lib/siteConfig";
 
 export default function LoginPage() {
   const [email,    setEmail]    = useState("");
@@ -241,7 +242,7 @@ export default function LoginPage() {
 
           <Link href="/" className="auth-logo">
             <img src="/logo.png" alt="Olson" className="auth-logo-img" />
-            <span className="auth-logo-text">Next Generation Power<br /></span>
+            <span className="auth-logo-text">{companyConfig.company.name}<br /></span>
           </Link>
 
           <div className="auth-left-copy">
@@ -283,7 +284,7 @@ export default function LoginPage() {
               <style>{`.mobile-logo { display: none; } @media(max-width:1024px){ .mobile-logo { display: flex; } }`}</style>
               <img src="/logo.png" alt="Olson" style={{ height: 36, width: "auto", objectFit: "contain" }} />
               <span style={{ fontFamily: "'Instrument Sans', sans-serif", fontWeight: 700, fontSize: 14, color: "var(--ink)", lineHeight: 1.2 }}>
-                Next Generation Power<br />
+                {companyConfig.company.name}<br />
               </span>
             </div>
 

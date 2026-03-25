@@ -4,26 +4,27 @@ import Image from "next/image";
 import CtaSection from "@/components/CtaSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import { companyConfig } from "@/lib/siteConfig";
 
 /* ─────────────────────────────────────────
    DATA
 ───────────────────────────────────────── */
 const TIMELINE = [
-  { year: "2017", title: "Founded in Harlow, SC",      body: "Liam Philips established Next Generation Power in Harlow, South Carolina with a small team of wind engineers and a single mission: make wind energy bankable at any scale." },
+  { year: "2017", title: "Founded in Harlow, SC",      body: `${companyConfig.ceo.name} established ${companyConfig.company.name} in Harlow, South Carolina with a small team of wind engineers and a single mission: make wind energy bankable at any scale.`},
   { year: "2019", title: "First 100 MW Project",       body: "Completed our first utility-scale installation in the Scottish Highlands — 40 turbines delivering reliable power to 60,000 homes." },
   { year: "2020", title: "Offshore Expansion",         body: "Entered the offshore market with a 250 MW North Sea project, proving our turbines could withstand Category 4 marine conditions." },
-  { year: "2021", title: "Platform Launch",            body: "Released the Next Generation Power Operations Platform, unifying wind analysis, SCADA monitoring, grid integration, and carbon reporting in a single interface." },
+  { year: "2021", title: "Platform Launch",            body: `Released the ${companyConfig.company.name} Operations Platform, unifying wind analysis, SCADA monitoring, grid integration, and carbon reporting in a single interface.`},
   { year: "2023", title: "Global 10 GW Milestone",    body: "Crossed 10 GW of cumulative installed capacity across 38 countries — a milestone reached faster than any competitor in our market segment." },
   { year: "2024", title: "40 GW & 12M Customers",     body: "Today we serve 12 million customers across 50+ countries, with 40 GW installed and 85 million tonnes of CO₂ offset and counting." },
 ];
 
 const LEADERSHIP = [
-  { name: "Liam Philips",        role: "Founder & CEO",                  img: "/boss.png",  bio: "Founder of Next Generation Power, headquartered in Harlow, SC.", linkedin: "https://linkedin.com/in/eric-olson-8548543b4" },
+  { name: `${companyConfig.ceo.name}`,        role: "Founder & CEO",                  img: `${companyConfig.ceo.photo}`,  bio: `Founder of ${companyConfig.company.name}, headquartered in Harlow, SC.`, linkedin: "https://linkedin.com/in/eric-olson-8548543b4" },
   { name: "Ingrid Solberg",    role: "Chief Technology Officer",       img: "/ingrid.png",  bio: "PhD in Computational Fluid Dynamics, TU Delft. Led the team that built our AI wind modeling engine." },
   { name: "Marcus Webb",       role: "Chief Operating Officer",        img: "/webb.png",  bio: "Previously VP Operations at Ørsted. Oversees 180+ active projects across six continents." },
   { name: "Amara Diallo",      role: "Chief Sustainability Officer",   img: "/amara.png",  bio: "Former UN Climate Advisor. Architected our ISO 14064-aligned carbon reporting framework." },
   { name: "Chen Wei",          role: "VP Engineering",                 img: "/chen.png",  bio: "15 years in power systems. Leads our 300-strong global engineering and installation teams." },
-  { name: "Sofia Andersson",   role: "VP Product",                     img: "/sofi.png", bio: "Previously at Siemens Gamesa. Drives the roadmap for the Next Generation Power Operations Platform." },
+  { name: "Sofia Andersson",   role: "VP Product",                     img: "/sofi.png", bio: `Previously at Siemens Gamesa. Drives the roadmap for the ${companyConfig.company.name} Operations Platform.` },
 ];
 
 const VALUES = [
@@ -43,9 +44,9 @@ const STATS = [
 ];
 
 const TESTI_ITEMS = [
-  { name: "Sarah Mitchell",  role: "Director, GreenGrid Corp",                  stars: 5, image: "/sarah.png", text: "Next Generation Power doesn't just sell turbines — they become a long-term partner. Their team was on-site within four hours of our first fault alert. That kind of service changes everything." },
-  { name: "Omar Alami",      role: "CEO, AfriWind Solutions",                   stars: 5, image: "/omar.png",  text: "What sets Next Generation Power apart is the culture. Every person we've worked with — from sales to installation to support — genuinely cares about the outcome, not just the contract." },
-  { name: "Lena Bergström",  role: "Chief Sustainability Officer, NordicPower", stars: 5, image: "/lena.png",  text: "I've worked with every major turbine manufacturer. Next Generation Power is the only one that treats sustainability reporting as a core product feature rather than a compliance afterthought." },
+  { name: "Sarah Mitchell",  role: "Director, GreenGrid Corp",                  stars: 5, image: "/sarah.png", text: `{companyConfig.company.name} doesn't just sell turbines — they become a long-term partner. Their team was on-site within four hours of our first fault alert. That kind of service changes everything.`},
+  { name: "Omar Alami",      role: "CEO, AfriWind Solutions",                   stars: 5, image: "/omar.png",  text: `What sets ${companyConfig.company.name} apart is the culture. Every person we've worked with — from sales to installation to support — genuinely cares about the outcome, not just the contract.`},
+  { name: "Lena Bergström",  role: "Chief Sustainability Officer, NordicPower", stars: 5, image: "/lena.png",  text: `I've worked with every major turbine manufacturer. ${companyConfig.company.name} is the only one that treats sustainability reporting as a core product feature rather than a compliance afterthought.`},
 ];
 
 /* ─────────────────────────────────────────
@@ -236,7 +237,7 @@ export default function AboutPage() {
               Built by engineers<br />driven by <em>purpose</em>
             </h1>
             <p className="ph-body">
-              Next Generation Power Turbine Technologies was founded on a simple belief: that clean energy should
+              ${companyConfig.company.name} Turbine Technologies was founded on a simple belief: that clean energy should
               be reliable, measurable, and accessible to every community on Earth. Founded in
               Harlow, South Carolina in 2017, that belief now powers 12 million homes across
               50 countries.
@@ -287,8 +288,7 @@ export default function AboutPage() {
           <div className="story-grid">
             <div className="story-body-col">
               <p>
-                Next Generation Power was born in Harlow, South Carolina in 2017, when founder
-                Liam Philips grew frustrated watching promising wind sites go undeveloped because no
+                {companyConfig.company.name} was born in Harlow, South Carolina in 2017, when founder {companyConfig.ceo.name} grew frustrated watching promising wind sites go undeveloped because no
                 one could model their yield reliably enough to secure financing.
               </p>
               <p>
@@ -323,14 +323,14 @@ export default function AboutPage() {
 
             <div>
               <div className="story-img-wrap">
-                <Image src="/boss.png" alt="Next Generation Power team" fill style={{ objectFit: "cover" }} />
+                <Image src={companyConfig.ceo.photo} alt={`${companyConfig.company.name} team`} fill style={{ objectFit: "cover" }} />
               </div>
               <div className="story-quote">
                 <p className="story-quote-text">
                   "We don't measure success in gigawatts. We measure it in the number of
                   communities that no longer depend on fossil fuels."
                 </p>
-                <div className="story-quote-attr">Liam Philips — Founder &amp; CEO</div>
+                <div className="story-quote-attr">{companyConfig.ceo.name} — Founder &amp; CEO</div>
               </div>
             </div>
           </div>

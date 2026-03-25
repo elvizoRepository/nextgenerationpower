@@ -1,5 +1,6 @@
 "use client";
 
+import { companyConfig } from "@/lib/siteConfig";
 import { useState } from "react";
 
 /* ─────────────────────────────────────────
@@ -10,9 +11,9 @@ const OFFICES = [
     city: "Harlow, SC",
     role: "Global Headquarters",
     address: "14 Ridgeline Pkwy, Suite 200, Harlow, SC 29401",
-    phone: "+1 (843) 557-2190",
-    fax: "+1 (954) 662-7679",
-    email: "hq@nextgenerationpower.com",
+    phone: `${companyConfig.company.phone}`,
+    fax: `${companyConfig.company.fax}`,
+    email: `hq@${companyConfig.company.email}`,
     flag: "🇺🇸",
   },
   {
@@ -20,7 +21,7 @@ const OFFICES = [
     role: "European Operations",
     address: "1 Canada Square, Canary Wharf, London E14 5AB",
     phone: "+44 20 3478 9120",
-    email: "europe@nextgenerationpower.com",
+    email: `europe@${companyConfig.company.email}`,
     flag: "🇬🇧",
   },
   {
@@ -28,7 +29,7 @@ const OFFICES = [
     role: "Asia Pacific",
     address: "1 Raffles Quay, #20-01, Singapore 048583",
     phone: "+65 6224 8830",
-    email: "apac@nextgenerationpower.com",
+    email: `apac@${companyConfig.company.email}`,
     flag: "🇸🇬",
   },
 ];
@@ -469,10 +470,10 @@ export default function ContactPage() {
           <div className="sidebar-card">
             <div className="sidebar-card-title">Direct contacts</div>
             {[
-              { icon: "📧", label: "General",   href: "mailto:hello@nextgenerationpower.com",  val: "hello@nextgenerationpower.com"  },
+              { icon: "📧", label: "General",   href: `mailto:hello@${companyConfig.company.email}`,  val: `hello@${companyConfig.company.email}`},
               { icon: "📞", label: "HQ",        href: "tel:+18435572190",               val: "+1 (843) 557-2190"       },
               { icon: "📠", label: "Fax",       href: "tel:+19546627679",               val: "+1 (954) 662-7679"       },
-              { icon: "📰", label: "Press",     href: "mailto:press@nextgenerationpower.com",  val: "press@nextgenerationpower.com"  },
+              { icon: "📰", label: "Press",     href: `mailto:press@${companyConfig.company.email}`,  val: `press@${companyConfig.company.email}`},
               { icon: "💼", label: "Careers",   href: "/careers",                       val: "View open roles"         },
             ].map((d) => (
               <a key={d.label} href={d.href} className="direct-link" target={d.href.startsWith("http") ? "_blank" : undefined} rel={d.href.startsWith("http") ? "noopener noreferrer" : undefined}>
@@ -567,7 +568,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }
       `}</style>

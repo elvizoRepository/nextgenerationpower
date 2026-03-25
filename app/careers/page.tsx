@@ -1,4 +1,5 @@
 "use client";
+import { companyConfig } from "@/lib/siteConfig";
 import { useState } from "react";
 
 const DEPTS = ["All", "Engineering", "Operations", "Software", "Sales", "Research"];
@@ -167,7 +168,7 @@ export default function CareersPage() {
       {/* PERKS */}
       <section className="c-perks">
         <div className="c-perks-inner">
-          <span className="section-tag">Why Next Generation Power</span>
+          <span className="section-tag">Why {companyConfig.company.name}</span>
           <h2 className="section-h2">More Than a <em>Job</em></h2>
           <div className="perks-grid">
             {PERKS.map(p=>(
@@ -213,7 +214,7 @@ export default function CareersPage() {
         <div className="c-cta-inner">
           <h2>Don't see your <em>role?</em></h2>
           <p>We're always looking for exceptional people. Send us your CV and tell us how you'd contribute to the clean energy transition.</p>
-          <a href="mailto:careers@nextgenerationpower.com" className="btn-primary-lg">Send Open Application →</a>
+          <a href={`mailto:careers@${companyConfig.company.webdomain}`} className="btn-primary-lg">Send Open Application →</a>
         </div>
       </section>
     </main>

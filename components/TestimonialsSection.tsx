@@ -1,19 +1,19 @@
 import Image from "next/image";
-
+import { companyConfig } from "@/lib/siteConfig";
 const DEFAULT_ITEMS = [
   {
     name: "Sarah Mitchell",
     role: "Director, GreenGrid Corp",
     stars: 5,
     image: "/sarah.png",
-    text: "Next Generation Power's turbines exceeded every performance benchmark we set. The monitoring dashboard alone saves our operations team over 200 hours per year in manual reporting.",
+    text: `${companyConfig.company.name}'s turbines exceeded every performance benchmark we set. The monitoring dashboard alone saves our operations team over 200 hours per year in manual reporting.`,
   },
   {
     name: "Omar Alami",
     role: "CEO, AfriWind Solutions",
     stars: 5,
     image: "/omar.png",
-    text: "Partnering with Next Generation Power transformed our rural electrification project in ways we hadn't anticipated. 40,000 homes now have access to reliable, affordable clean power.",
+    text: `Partnering with ${companyConfig.company.name} transformed our rural electrification project in ways we hadn't anticipated. 40,000 homes now have access to reliable, affordable clean power.`,
   },
   {
     name: "Lena Bergström",

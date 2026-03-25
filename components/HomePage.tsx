@@ -1,5 +1,6 @@
 "use client";
 
+import { companyConfig } from "@/lib/siteConfig";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -549,8 +550,8 @@ export default function HomePage() {
             so the image renders large but NEVER expands the navbar.
           */}
           <img
-            src="/logo.png"
-            alt="Next Generation Power"
+            src={companyConfig.company.logo}
+            alt={companyConfig.company.name}
             className="nav-logo-img w-full"
             
           />
@@ -595,7 +596,7 @@ export default function HomePage() {
             Powering a<br /><em>Greener</em><br />Tomorrow
           </h1>
           <p className="hero-body">
-            Next Generation Power designs and deploys advanced wind energy systems that power communities cleanly — from coastal installations to remote mountain regions.
+            {companyConfig.company.name} designs and deploys advanced wind energy systems that power communities cleanly — from coastal installations to remote mountain regions.
           </p>
           <div className="hero-ctas">
             <a href="#features" className="btn-primary-lg">Explore Solutions <span>→</span></a>
@@ -697,7 +698,7 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <span className="section-tag">About Next Generation Power</span>
+            <span className="section-tag">About {companyConfig.company.name}</span>
             <h2 className="section-h2" style={{ marginBottom: 20 }}>
               Engineering Clean<br />Energy <em>Since 2009</em>
             </h2>
@@ -763,8 +764,8 @@ export default function HomePage() {
           </div>
           <div className="testi-grid">
             {[
-              { name: "Sarah Mitchell",  role: "Director, GreenGrid Corp",                stars: 5, text: "Next Generation Power's turbines exceeded every performance benchmark we set. The monitoring dashboard alone saves our operations team over 200 hours per year in manual reporting.", image: "/sarah.png"},
-              { name: "Omar Alami",   role: "CEO, AfriWind Solutions",                 stars: 5, text: "Partnering with Next Generation Power transformed our rural electrification project in ways we hadn't anticipated. 40,000 homes now have access to reliable, affordable clean power.", image: "/omar.png" },
+              { name: "Sarah Mitchell",  role: "Director, GreenGrid Corp",                stars: 5, text: `${companyConfig.company.name}'s turbines exceeded every performance benchmark we set. The monitoring dashboard alone saves our operations team over 200 hours per year in manual reporting.`, image: "/sarah.png"},
+              { name: "Omar Alami",   role: "CEO, AfriWind Solutions",                 stars: 5, text: `Partnering with ${companyConfig.company.name} transformed our rural electrification project in ways we hadn't anticipated. 40,000 homes now have access to reliable, affordable clean power.`, image: "/omar.png" },
               { name: "Lena Bergström", role: "Chief Sustainability Officer, NordicPower", stars: 5, text: "The carbon reporting tools are best-in-class for enterprise sustainability teams. We hit our 2030 decarbonisation targets six full years ahead of schedule.", image: "/lena.png" },
             ].map((t) => (
               <div key={t.name} className="testi-card">
@@ -802,9 +803,9 @@ export default function HomePage() {
         <div className="footer-grid">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <Image src="/logo.png" alt="Next Generation Power" width={34} height={34} style={{ objectFit: "contain" }} />
+              <Image src={companyConfig.company.logo} alt={companyConfig.company.name} width={34} height={34} style={{ objectFit: "contain" }} />
               <span style={{ fontFamily: "'Instrument Sans', sans-serif", fontWeight: 700, fontSize: 14, color: "white" }}>
-                Next Generation Power
+                {companyConfig.company.name}
               </span>
             </div>
             <p className="footer-brand-tagline">
@@ -825,7 +826,7 @@ export default function HomePage() {
           ))}
         </div>
         <div className="footer-bottom">
-          <p className="footer-copy">© {new Date().getFullYear()} Next Generation Power. All rights reserved.</p>
+          <p className="footer-copy">© {new Date().getFullYear()} {companyConfig.company.name}. All rights reserved.</p>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((l) => (
               <a key={l} href="#" className="footer-a" style={{ fontSize: 12 }}>{l}</a>

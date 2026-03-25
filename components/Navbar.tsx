@@ -1,5 +1,6 @@
 "use client";
 
+import { companyConfig } from "@/lib/siteConfig";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -139,7 +140,7 @@ export default function Navbar() {
 
       <header className={`nav-wrap${scrolled ? " scrolled" : ""}`}>
         <Link href="/" className="nav-wordmark">
-          <img src="/logo.png" alt="Next Generation Power" className="nav-logo-img" />
+          <img src={companyConfig.company.logo} alt={companyConfig.company.name} className="nav-logo-img" />
         </Link>
 
         <nav className="nav-links">
@@ -169,7 +170,7 @@ export default function Navbar() {
         <div className="mobile-overlay">
           <div className="mobile-overlay-top">
             <Link href="/" onClick={() => setMobileOpen(false)}>
-              <img src="/logo.png" alt="Next Generation Power" style={{ height: 52, objectFit: "contain" }} />
+              <img src={companyConfig.company.logo} alt={companyConfig.company.name} style={{ height: 52, objectFit: "contain" }} />
             </Link>
             <button onClick={() => setMobileOpen(false)} className="mobile-close">✕</button>
           </div>

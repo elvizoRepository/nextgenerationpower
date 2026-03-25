@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { companyConfig } from "@/lib/siteConfig";
 
 const FOOTER_COLS = [
   {
@@ -67,9 +68,9 @@ export default function Footer() {
         {/* ── Brand column ── */}
         <div>
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-            <Image src="/logo.png" alt="Next Generation Power" width={34} height={34} style={{ objectFit: "contain" }} />
+            <Image src={companyConfig.company.logo} alt={companyConfig.company.name} width={34} height={34} style={{ objectFit: "contain" }} />
             <span style={{ fontFamily: "'Instrument Sans', sans-serif", fontWeight: 700, fontSize: 14, color: "white", lineHeight: 1.3 }}>
-              Next Generation <br />Power
+              {companyConfig.company.name}
             </span>
           </Link>
           <p className="footer-brand-tagline">
@@ -105,7 +106,7 @@ export default function Footer() {
       {/* ── Bottom bar ── */}
       <div className="footer-bottom">
         <p className="footer-copy">
-          © {new Date().getFullYear()} Next Generation Power AS. All rights reserved.
+          © {new Date().getFullYear()} {companyConfig.company.name} AS. All rights reserved.
         </p>
         <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
           {LEGAL_LINKS.map((l) => (

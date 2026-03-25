@@ -3,6 +3,7 @@
 import Image from "next/image";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import CtaSection from "@/components/CtaSection";
+import { companyConfig } from "@/lib/siteConfig";
 
 /* ─────────────────────────────────────────
    DATA
@@ -73,7 +74,7 @@ const CASE_STUDIES = [
     country: "Vietnam & Philippines",
     flag: "🇻🇳",
     headline: "Island microgrids ending diesel dependency",
-    body: "27 island communities across Vietnam and the Philippines have replaced diesel generators with Next Generation Power hybrid microgrids. Average diesel spend fell by $1.4M per island per year, freeing budget for education and healthcare.",
+    body: `27 island communities across Vietnam and the Philippines have replaced diesel generators with ${companyConfig.company.name} hybrid microgrids. Average diesel spend fell by $1.4M per island per year, freeing budget for education and healthcare.`,
     metrics: [
       { val: "27", label: "Islands converted" },
       { val: "$1.4M", label: "Saved per island / yr" },

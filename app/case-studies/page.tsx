@@ -1,4 +1,5 @@
 "use client";
+import { companyConfig } from "@/lib/siteConfig";
 import { useState } from "react";
 
 const FILTERS = ["All", "Onshore", "Offshore", "Hybrid", "Monitoring"];
@@ -102,7 +103,7 @@ export default function CaseStudiesPage() {
             <span className="section-tag">Success Stories</span>
             <h1 className="cs-h1">Real Projects,<br /><em>Real Impact</em></h1>
           </div>
-          <p className="cs-hero-body">From 96 MW island microgrids to 800 MW offshore arrays — explore how Next Generation Power has delivered clean energy projects across 50 countries.</p>
+          <p className="cs-hero-body">From 96 MW island microgrids to 800 MW offshore arrays — explore how {companyConfig.company.name} has delivered clean energy projects across 50 countries.</p>
         </div>
       </section>
 

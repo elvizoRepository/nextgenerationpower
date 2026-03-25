@@ -5,6 +5,7 @@ import { useState } from "react";
 import CtaSection from "@/components/CtaSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import { companyConfig } from "@/lib/siteConfig";
 
 /* ─────────────────────────────────────────
    DATA
@@ -35,7 +36,7 @@ const TAB_CONTENT = [
   {
     headline: "Real-Time Performance Monitoring",
     sub:      "Every turbine. Every second.",
-    body:     "The Next Generation Power Operations Dashboard gives your team a live, unified view of every asset in your fleet — from a single turbine on a hillside to a 400-unit offshore array. Anomalies are caught before they become failures, and scheduled maintenance is replaced by condition-based interventions.",
+    body:     `The ${companyConfig.company.name} Operations Dashboard gives your team a live, unified view of every asset in your fleet — from a single turbine on a hillside to a 400-unit offshore array. Anomalies are caught before they become failures, and scheduled maintenance is replaced by condition-based interventions.`,
     bullets:  [
       "Sub-second SCADA telemetry with 99.97% uptime SLA",
       "ML-driven fault prediction up to 14 days in advance",
@@ -75,7 +76,7 @@ const TAB_CONTENT = [
     ],
     stat1: { val: "6 yrs", label: "Avg. ahead of sustainability targets" },
     stat2: { val: "100%",  label: "Audit-ready documentation coverage" },
-    img: "/f6.png",
+    img: `${companyConfig.ceo.board}`,
   },
 ];
 
@@ -104,7 +105,7 @@ const TESTI_ITEMS = [
     role:  "CEO, AfriWind Solutions",
     stars: 5,
     image: "/omar.png",
-    text:  "The wind analysis module gave us confidence to invest in sites we would previously have passed on. Three of our top five performing assets came from Next Generation Power recommendations.",
+    text:  `The wind analysis module gave us confidence to invest in sites we would previously have passed on. Three of our top five performing assets came from ${companyConfig.company.name} recommendations.`,
   },
   {
     name:  "Lena Bergström",
@@ -401,7 +402,7 @@ export default function FeaturesPage() {
               Everything you need<br />to run <em>world-class</em><br />wind energy
             </h1>
             <p className="ph-body">
-              From the first site assessment to the last carbon certificate, Next Generation Power's platform covers
+              From the first site assessment to the last carbon certificate, {companyConfig.company.name}'s platform covers
               every step of the energy lifecycle — built for operators, engineers, and sustainability
               teams alike.
             </p>
@@ -539,7 +540,7 @@ export default function FeaturesPage() {
       <section className="compare">
         <div className="compare-inner">
           <span className="section-tag">How We Compare</span>
-          <h2 className="section-h2">Why operators <em>choose Next Generation Power</em></h2>
+          <h2 className="section-h2">Why operators <em>choose {companyConfig.company.name}</em></h2>
           <p className="section-body" style={{ maxWidth: 520, marginTop: 14 }}>
             We consistently outperform industry alternatives on the metrics that matter most to
             asset owners and operators.
@@ -549,7 +550,7 @@ export default function FeaturesPage() {
             <thead>
               <tr>
                 <th>Feature</th>
-                <th className="th-olson">Next Generation Power Platform</th>
+                <th className="th-olson">{companyConfig.company.name} Platform</th>
                 <th>Industry Average</th>
                 <th>Legacy SCADA</th>
               </tr>

@@ -1,6 +1,7 @@
 // app/privacy/page.tsx
 "use client";
 
+import { companyConfig } from "@/lib/siteConfig";
 import React from "react";
 
 // ─── TYPES ───────────────────────────────────────────────
@@ -36,7 +37,7 @@ const PRIVACY_SECTIONS: PrivacySection[] = [
   },
   {
     title: "Your Rights",
-    body: "Depending on your location, you may have the right to access, correct, or delete your personal data; object to or restrict processing; data portability; and to withdraw consent. To exercise these rights, contact privacy@nextgenerationpower.com. We will respond within 30 days."
+    body: "Depending on your location, you may have the right to access, correct, or delete your personal data; object to or restrict processing; data portability; and to withdraw consent. To exercise these rights, contact privacy@{companyConfig.company.name}. We will respond within 30 days."
   },
   {
     title: "Security",
@@ -48,7 +49,7 @@ const PRIVACY_SECTIONS: PrivacySection[] = [
   },
   {
     title: "Contact",
-    body: "For privacy enquiries, contact our Data Protection Officer at privacy@nextgenerationpower.com or by post to Next Generation Power, 999 Brickell Ave #410, Miami, FL."
+    body: `For privacy enquiries, contact our Data Protection Officer at privacy@${companyConfig.company.name} or by post to ${companyConfig.company.name}, 999 Brickell Ave #410, Miami, FL.`
   }
 ];
 
@@ -171,7 +172,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title={<>Privacy <em>Policy</em></>}
-      subtitle="This policy explains how Next Generation Power collects, uses, and protects personal information across our products and services."
+      subtitle={`This policy explains how ${companyConfig.company.name} collects, uses, and protects personal information across our products and services.`}
       updated="1 March 2025"
       sections={PRIVACY_SECTIONS}
     />

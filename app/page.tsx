@@ -4,7 +4,7 @@ import Image from "next/image";
 import CtaSection from "@/components/CtaSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MarqueeStrip from "@/components/MarqueeStrip";
-
+import { companyConfig } from "@/lib/siteConfig";
 export default function HomePage() {
   return (
     <main style={{ fontFamily: "'Instrument Sans', 'DM Sans', sans-serif", overflowX: "hidden" }}>
@@ -205,7 +205,7 @@ export default function HomePage() {
             Powering a<br /><em>Greener</em><br />Tomorrow
           </h1>
           <p className="hero-body">
-            Next Generation Power installs and engineers advanced wind energy systems — then
+            {companyConfig.company.name} installs and engineers advanced wind energy systems — then
             runs them smarter. From site survey to commissioning to real-time monitoring, we own
             every step.
           </p>
@@ -337,7 +337,7 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <span className="section-tag">About Next Generation Power</span>
+            <span className="section-tag">About {companyConfig.company.name} </span>
             <h2 className="section-h2" style={{ marginBottom: 20 }}>
               Engineering Clean<br />Energy <em>Since 2017</em>
             </h2>

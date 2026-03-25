@@ -5,6 +5,7 @@ import { useState } from "react";
 import CtaSection from "@/components/CtaSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MarqueeStrip from "@/components/MarqueeStrip";
+import { companyConfig } from "@/lib/siteConfig";
 
 /* ─────────────────────────────────────────
    DATA
@@ -58,7 +59,7 @@ const SERVICES = [
     bullets: [
       "Full-scope and limited-scope O&M contracts",
       "Dedicated site technicians or shared regional teams",
-      "24/7 remote monitoring via Next Generation Power Operations Platform",
+      `24/7 remote monitoring via ${companyConfig.company.name} Operations Platform`,
       "Condition-based maintenance replacing time-based schedules",
       "Spare parts inventory management and logistics",
       "Performance guarantees with AEP assurance",
@@ -111,21 +112,21 @@ const TESTI_ITEMS = [
     role:  "Director of Operations, GreenGrid Corp",
     stars: 5,
     image: "/sarah.png",
-    text:  "Next Generation Power doesn't just sell turbines — they become a long-term partner. Their team was on-site within four hours of our first fault alert. That kind of service changes everything.",
+    text:  `${companyConfig.company.name} doesn't just sell turbines — they become a long-term partner. Their team was on-site within four hours of our first fault alert. That kind of service changes everything.`,
   },
   {
     name:  "Omar Alami",
     role:  "CEO, AfriWind Solutions",
     stars: 5,
     image: "/omar.png",
-    text:  "What sets Next Generation Power apart is the culture. Every person we've worked with — from sales to installation to support — genuinely cares about the outcome, not just the contract.",
+    text:  `What sets ${companyConfig.company.name} apart is the culture. Every person we've worked with — from sales to installation to support — genuinely cares about the outcome, not just the contract.`,
   },
   {
     name:  "Lena Bergström",
     role:  "Chief Sustainability Officer, NordicPower",
     stars: 5,
     image: "/lena.png",
-    text:  "I've worked with every major turbine manufacturer. Next Generation Power is the only one that treats sustainability reporting as a core product feature rather than a compliance afterthought.",
+    text:  `I've worked with every major turbine manufacturer. ${companyConfig.company.name} is the only one that treats sustainability reporting as a core product feature rather than a compliance afterthought.`,
   },
 ];
 
@@ -451,7 +452,7 @@ export default function ServicesPage() {
               We build it.<br />We run it.<br /><em>End to end.</em>
             </h1>
             <p className="ph-body">
-              Next Generation Power delivers the full lifecycle of wind energy — from the first
+              {companyConfig.company.name} delivers the full lifecycle of wind energy — from the first
               site walk to long-term asset operation. Every project is ours from start to finish.
             </p>
             <div className="ph-ctas">
@@ -617,7 +618,7 @@ export default function ServicesPage() {
           </div>
 
           <div>
-            <span className="section-tag">Why Next Generation Power</span>
+            <span className="section-tag">Why {companyConfig.company.name}</span>
             <h2 className="section-h2">The engineers, <em>not just the software</em></h2>
             <p className="section-body" style={{ marginTop: 16 }}>
               Most wind technology companies build tools. We also build turbines — which means our

@@ -1,4 +1,5 @@
 "use client";
+import { companyConfig } from "@/lib/siteConfig";
 import { useState, ChangeEvent } from "react";
 
 // ─── TYPES ───────────────────────────────────────────────
@@ -130,7 +131,7 @@ export default function RegisterPage() {
 
       {/* LEFT PANEL */}
       <div className="auth-left">
-        <a href="/" className="auth-logo">Next Generation <span>Power</span></a>
+        <a href="/" className="auth-logo">{companyConfig.company.name}</a>
         <div className="auth-left-copy">
           <span className="auth-left-tag">Get started free</span>
           <h2 className="auth-left-h">Connect your<br /><em>first turbine</em><br />in minutes</h2>

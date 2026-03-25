@@ -1,5 +1,6 @@
 "use client";
 
+import { companyConfig } from "@/lib/siteConfig";
 import { useState, useEffect, useRef } from "react";
 
 /* ─────────────────────────────────────────
@@ -51,11 +52,11 @@ const AUTO_REPLIES: { keywords: string[]; reply: string }[] = [
   },
   {
     keywords: ["partner", "partnership", "collaborate", "invest", "investor"],
-    reply: "We're always open to strategic partnerships! For formal enquiries, our team at partnerships@nextgenerationpower.com is the fastest route. Would you like me to flag your interest directly?",
+    reply: `We're always open to strategic partnerships! For formal enquiries, our team at partnerships@${companyConfig.company.webdomain} is the fastest route. Would you like me to flag your interest directly?`,
   },
   {
     keywords: ["contact", "phone", "call", "email", "reach"],
-    reply: "You can reach our HQ at +1 (843) 557-2190 or email hq@nextgenerationpower.com. For press, press@nextgenerationpower.com. Is there a specific team I can connect you with right now?",
+    reply: `You can reach our HQ at +1 (843) 557-2190 or email hq@${companyConfig.company.webdomain}. For press, press@${companyConfig.company.webdomain}. Is there a specific team I can connect you with right now?`,
   },
   {
     keywords: ["carbon", "sustainability", "co2", "offset", "green", "b corp", "iso"],
@@ -63,7 +64,7 @@ const AUTO_REPLIES: { keywords: string[]; reply: string }[] = [
   },
   {
     keywords: ["job", "career", "hiring", "work", "role", "position", "apply"],
-    reply: "We're growing fast and always looking for talented people! Check out our open roles at nextgenerationpower.com/careers — or tell me what you're looking for and I'll point you to the right team.",
+    reply: `We're growing fast and always looking for talented people! Check out our open roles at ${companyConfig.company.webdomain}/careers — or tell me what you're looking for and I'll point you to the right team.`,
   },
   {
     keywords: ["thank", "thanks", "appreciate", "great", "helpful"],
@@ -71,7 +72,7 @@ const AUTO_REPLIES: { keywords: string[]; reply: string }[] = [
   },
   {
     keywords: ["bye", "goodbye", "done", "that's all", "thats all"],
-    reply: "Thanks for reaching out to Next Generation Power! Have a great day 🌿 Don't hesitate to come back if you need anything.",
+    reply: `Thanks for reaching out to ${companyConfig.company.name}! Have a great day 🌿 Don't hesitate to come back if you need anything.`,
   },
 ];
 
@@ -141,7 +142,7 @@ export default function LiveChat() {
         setTimeout(() => {
           setAgentTyping(false);
           addAgentMessage(
-            `Hi there! 👋 I'm Klooper from the Next Generation Power support team. How can I help you today?`
+            `Hi there! 👋 I'm Klooper from the ${companyConfig.company.name} support team. How can I help you today?`
           );
         }, 1200);
       }, 400);
@@ -529,7 +530,7 @@ export default function LiveChat() {
                     <circle cx="5" cy="5" r="4.5" fill="#3db869" opacity="0.3"/>
                     <circle cx="5" cy="5" r="2.5" fill="#3db869"/>
                   </svg>
-                  Live support by <strong>Next Generation Power</strong> · Harlow, SC
+                  Live support by <strong>{companyConfig.company.name}</strong> · Harlow, SC
                 </div>
 
                 {/* Messages */}

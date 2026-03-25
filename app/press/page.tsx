@@ -1,5 +1,7 @@
 "use client";
 
+import { companyConfig } from "@/lib/siteConfig";
+
 const RELEASES = [
   { date: "Mar 2025", title: "Next Generation Power Reaches 40 GW Installed Capacity Milestone", tag: "Milestone" },
   { date: "Jan 2025", title: "Partnership Announced with Nordic Grid Authority for Offshore Expansion", tag: "Partnership" },
@@ -19,7 +21,7 @@ const ASSETS = [
 ];
 
 const EXECS = [
-  { name: "Liam Philip",     title: "Founder & CEO",           bio: "Founder of Next Generation Power, Connect with Eric on LinkedIn at linkedin.com/in/eric-olson-8548543b4.", initials: "EO" },
+  { name: `${companyConfig.ceo.name}`,     title: "Founder & CEO",           bio: `Founder of Next Generation Power, Connect with Eric on LinkedIn at ${companyConfig.ceo.linkedin}`, initials: "EO" },
   { name: "Ingrid Solberg", title: "Chief Technology Officer", bio: "PhD in Computational Fluid Dynamics, TU Delft. Led the team that built our AI wind modeling engine.",                                                               initials: "IS" },
   { name: "Marcus Webb",    title: "Chief Operating Officer",  bio: "Previously VP Operations at Ørsted. Oversees 180+ active projects across six continents.",                                                                            initials: "MW" },
 ];
@@ -203,7 +205,7 @@ export default function PressPage() {
       <div className="press-contact">
         <div className="press-contact-inner">
           <span className="press-contact-text">Press enquiries & interview requests:</span>
-          <a href="mailto:press@nextgenerationpower.com" className="press-contact-email">press@nextgenerationpower.com</a>
+          <a href={`mailto:press@${companyConfig.company.email}`} className="press-contact-email">press@{companyConfig.company.email}</a>
         </div>
       </div>
 
