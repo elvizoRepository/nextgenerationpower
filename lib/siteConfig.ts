@@ -2,10 +2,10 @@ const webdomain = "nextgenerationpower.com";
 
 export const companyConfig = {
   ceo: {
-    name: "Anthony Gerald.",
+    name: "Anthony Gerald",
     photo: "/bossnew.png",
     linkedin: "linkedin.com/in/anthony-b-gerald-a074553b9",
-    board:"/f4.png"
+    board:"f4.png"
   },
   company: {
     name:"Next Generation Power ",

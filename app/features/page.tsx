@@ -76,7 +76,7 @@ const TAB_CONTENT = [
     ],
     stat1: { val: "6 yrs", label: "Avg. ahead of sustainability targets" },
     stat2: { val: "100%",  label: "Audit-ready documentation coverage" },
-    img: `${companyConfig.ceo.board}`,
+    img: `/${companyConfig.ceo.board}`,
   },
 ];
 
